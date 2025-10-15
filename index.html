@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#007AFF">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="To-Do App">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="app-title">Tasks</h1>
+            <button class="voice-btn" id="voiceBtn" aria-label="Voice input">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 1C10.34 1 9 2.34 9 4V12C9 13.66 10.34 15 12 15C13.66 15 15 13.66 15 12V4C15 2.34 13.66 1 12 1Z" fill="currentColor"/>
+                    <path d="M19 10V12C19 15.87 15.87 19 12 19C8.13 19 5 15.87 5 12V10H7V12C7 14.76 9.24 17 12 17C14.76 17 17 14.76 17 12V10H19Z" fill="currentColor"/>
+                    <path d="M11 22H13V24H11V22Z" fill="currentColor"/>
+                </svg>
+            </button>
+        </header>
+
+        <!-- Category Filter -->
+        <div class="category-filter">
+            <button class="category-btn active" data-category="all">All</button>
+            <button class="category-btn" data-category="work">Work</button>
+            <button class="category-btn" data-category="study">Study</button>
+            <button class="category-btn" data-category="personal">Personal</button>
+        </div>
+
+        <!-- Add Task Form -->
+        <div class="add-task-container">
+            <form class="add-task-form" id="addTaskForm">
+                <div class="input-group">
+                    <input type="text" id="taskInput" placeholder="Add a new task..." required>
+                    <select id="categorySelect">
+                        <option value="personal">Personal</option>
+                        <option value="work">Work</option>
+                        <option value="study">Study</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <input type="datetime-local" id="deadlineInput">
+                    <button type="submit" class="add-btn">Add Task</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Task List -->
+        <div class="task-list-container">
+            <ul class="task-list" id="taskList">
+                <!-- Tasks will be dynamically added here -->
+            </ul>
+        </div>
+
+        <!-- Voice Input Modal -->
+        <div class="modal" id="voiceModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Voice Input</h3>
+                    <button class="close-btn" id="closeVoiceModal">&times;</button>
+                </div>
+                <div class="voice-status" id="voiceStatus">
+                    <div class="voice-animation">
+                        <div class="voice-wave"></div>
+                        <div class="voice-wave"></div>
+                        <div class="voice-wave"></div>
+                    </div>
+                    <p>Click to start speaking...</p>
+                </div>
+                <div class="voice-controls">
+                    <button class="voice-start-btn" id="voiceStartBtn">Start Recording</button>
+                    <button class="voice-stop-btn" id="voiceStopBtn" style="display: none;">Stop Recording</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notification Permission -->
+        <div class="notification-permission" id="notificationPermission" style="display: none;">
+            <p>Enable notifications to get reminders for your tasks</p>
+            <button class="enable-notifications-btn" id="enableNotificationsBtn">Enable Notifications</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
