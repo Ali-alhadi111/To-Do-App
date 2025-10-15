@@ -1,6 +1,6 @@
 # To-Do List Mobile App
 
-A to-do list mobile app built with vanilla HTML, CSS, and JavaScript, following Apple's Human Interface Guidelines design system.
+A to-do list mobile app built with vanilla HTML, CSS, and JavaScript.
 
 ![to do app](https://github.com/user-attachments/assets/517f5c6b-d9bc-4674-8f6f-13913be71a08)
 
